@@ -1,0 +1,4 @@
+# launch browser and terminal
+cmd + shift - w : /Applications/Firefox.app/Contents/MacOS/firefox
+cmd - return : open -n /Applications/Alacritty.app
+
