@@ -2,22 +2,22 @@ window:
         decorations: none
 
 # Font configuration
-font: 
-        normal:
-                family: MesloLGS NF
-                style: Regular
-
-        bold:
-                family: MesloLGS NF
-                style: Bold
-
-        italic: 
-                family: MesloLGS NF
-                style: Italic 
-
-        size: 16.0
-
-        scale_with_dpi: true
+#font: 
+#        normal:
+#                family: MesloLGS NF
+#                style: Regular
+#
+#        bold:
+#                family: MesloLGS NF
+#                style: Bold
+#
+#        italic: 
+#                family: MesloLGS NF
+#                style: Italic 
+#
+#        size: 12.0
+#
+#        scale_with_dpi: false 
 
 
 # If `true`, bold text is drawn using the bright color variants.
@@ -82,7 +82,19 @@ colors:
     cyan:    '0x67a0b2'
     white:   '0xc5c8c6'
 
-background_opacity: 0.5
+background_opacity: 0.85
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

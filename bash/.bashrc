@@ -1,8 +1,8 @@
 alias sshs="ssh ackermch@supply.mit.edu"
 alias skim="open -a skim"
-#set -o vi
 set editing-mode vi
 set keymap vi-command
+#export PATH="${PATH}:/usr/local/stata15"
 
 
 # Setup fzf
@@ -30,6 +30,9 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
 
 PATH="/Applications/MATLAB_R2019a.app/bin:${PATH}"
+export PATH
+
+PATH="$PATH:/usr/local/stata15/"
 export PATH
 
 export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
@@ -116,10 +119,10 @@ if [ $? -eq 0 ]; then
     \eval "$__conda_setup"
 else
     if [ -f "/Users/ChristophersMac/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/ChristophersMac/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
+	. "/Users/ChristophersMac/anaconda3/etc/profile.d/conda.sh"
+	CONDA_CHANGEPS1=false conda activate base
     else
-        \export PATH="/Users/ChristophersMac/anaconda3/bin:$PATH"
+	\export PATH="/Users/ChristophersMac/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

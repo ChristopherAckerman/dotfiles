@@ -93,7 +93,7 @@
 (require 'origami)
 
 ;; appearance
-(load-theme 'zenburn t)
+;; (load-theme 'zenburn t)
 (setq scroll-conservatively 100)
 (global-linum-mode t)
 (menu-bar-mode -1)
@@ -169,8 +169,13 @@
 
 ;; stats stuff
 (require 'ess)
+(require 'ess-site)
+;; personal elisp (and ob-stata.el/ess-stata-mode.el)
+(add-to-list 'load-path "~/dotfiles/emacs/.emacs.d/lisp")
 (require 'ess-stata-mode)
-(setq-default inferior-STA-program-name "stata-se")
+;; (setq-default inferior-STA-program-name "stata-se")
+(setq-default inferior-STA-program "stata-se")
+(setq-default inferior-STA-start-args "")
 
 ;; python
 (use-package elpy
@@ -198,8 +203,6 @@
 (require 'babel)
 (setq org-confirm-babel-evaluate nil)
 ;; Tell emacs location of the directory containing 
-;; personal elisp (and ob-stata.el)
-(add-to-list 'load-path "/Users/ChristophersMac/.dotfiles/emacs/.emacs.d/lisp")
 ;; load ob-stata
 (require 'ob-stata)
 (org-babel-do-load-languages
