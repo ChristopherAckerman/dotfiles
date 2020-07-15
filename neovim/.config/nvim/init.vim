@@ -11,9 +11,14 @@ set clipboard=unnamedplus
 set foldmethod=syntax
 
 let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 ":autocmd CursorMoved * if line('.') == line('$') | call append('$', '') | endif
 set wildmode=longest,list,full
 
+map <Esc><Esc> :w<CR>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -23,6 +28,7 @@ noremap <Right> <Nop>
 let g:plugged_home = '~/.vim/plugged'
 
 call plug#begin(g:plugged_home)
+Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jpalardy/vim-slime'
 Plug 'JuliaEditorSupport/julia-vim'

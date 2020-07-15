@@ -1,0 +1,14 @@
+
+xmonad.hs:184:26: warning: [-Wdeprecations]
+    In the use of ‘spacing’ (imported from XMonad.Layout.Spacing):
+    Deprecated: "Use spacingRaw instead."
+    |
+184 | myLayout = avoidStruts $ spacing 4(tiled ||| Mirror tiled ||| Full)
+    |                          ^^^^^^^
+
+xmonad.hs:259:1: warning: [-Wtabs]
+    Tab character found here.
+    Please use spaces instead.
+    |
+259 |         logHook = dynamicLog
+    | ^^^^^^^^

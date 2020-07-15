@@ -82,7 +82,7 @@ colors:
     cyan:    '0x67a0b2'
     white:   '0xc5c8c6'
 
-background_opacity: 0.85
+background_opacity: 0.80
 
 
 
