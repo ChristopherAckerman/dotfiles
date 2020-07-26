@@ -38,53 +38,6 @@
   :config
   (which-key-mode))
 
-;; hydra
-  (use-package hydra 
-    :ensure hydra
-    :init 
-    (global-set-key
-    (kbd "C-x t")
-	    (defhydra toggle (:color blue)
-	      "toggle"
-	      ("a" abbrev-mode "abbrev")
-	      ("s" flyspell-mode "flyspell")
-	      ("d" toggle-debug-on-error "debug")
-	      ("c" fci-mode "fCi")
-	      ("f" auto-fill-mode "fill")
-	      ("t" toggle-truncate-lines "truncate")
-	      ("w" whitespace-mode "whitespace")
-	      ("q" nil "cancel")))
-    (global-set-key
-     (kbd "C-x j")
-     (defhydra gotoline 
-       ( :pre (linum-mode 1)
-	      :post (linum-mode -1))
-       "goto"
-       ("t" (lambda () (interactive)(move-to-window-line-top-bottom 0)) "top")
-       ("b" (lambda () (interactive)(move-to-window-line-top-bottom -1)) "bottom")
-       ("m" (lambda () (interactive)(move-to-window-line-top-bottom)) "middle")
-       ("e" (lambda () (interactive)(end-of-buffer)) "end")
-       ("c" recenter-top-bottom "recenter")
-       ("n" next-line "down")
-       ("p" (lambda () (interactive) (forward-line -1))  "up")
-       ("g" goto-line "goto-line")
-       ))
-    (global-set-key
-     (kbd "C-c t")
-     (defhydra hydra-global-org (:color blue)
-       "Org"
-       ("t" org-timer-start "Start Timer")
-       ("s" org-timer-stop "Stop Timer")
-       ("r" org-timer-set-timer "Set Timer") ; This one requires you be in an orgmode doc, as it sets the timer for the header
-       ("p" org-timer "Print Timer") ; output timer value to buffer
-       ("w" (org-clock-in '(4)) "Clock-In") ; used with (org-clock-persistence-insinuate) (setq org-clock-persist t)
-       ("o" org-clock-out "Clock-Out") ; you might also want (setq org-log-note-clock-out t)
-       ("j" org-clock-goto "Clock Goto") ; global visit the clocked task
-       ("c" org-capture "Capture") ; Don't forget to define the captures you want http://orgmode.org/manual/Capture.html
-	     ("l" (or )rg-capture-goto-last-stored "Last Capture"))
-
-     ))
-
 
 ;; commenting
 (unless (package-installed-p 'evil-nerd-commenter)
@@ -93,7 +46,7 @@
 (require 'origami)
 
 ;; appearance
-;; (load-theme 'zenburn t)
+(load-theme 'zenburn t)
 (setq scroll-conservatively 100)
 (global-linum-mode t)
 (menu-bar-mode -1)
@@ -148,6 +101,7 @@
 (setq reftex-plug-into-AUCTeX t)
 (setq TeX-PDF-mode t)
 (pdf-tools-install)
+(setq org-src-fontify-natively t)
 
 ;; git/magit
 (use-package magit
@@ -157,19 +111,10 @@
     (bind-key "C-x g" 'magit-status)
     ))
 
-;; (setq magit-status-margin
-;;   '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
-;;     (use-package git-gutter
-;;     :ensure t
-;;     :init
-;;     (global-git-gutter-mode +1))
-;;     (use-package git-timemachine
-;;     :ensure t
-;;     )
-
 ;; stats stuff
 (require 'ess)
 (require 'ess-site)
+
 ;; personal elisp (and ob-stata.el/ess-stata-mode.el)
 (add-to-list 'load-path "~/dotfiles/emacs/.emacs.d/lisp")
 (require 'ess-stata-mode)
@@ -214,14 +159,8 @@
 (setq org-latex-listings 'minted) 
 
 (setq org-latex-pdf-process
-      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+      '("latexmk -shell-escape -interaction=nonstopmode %f"))
 
-(setq org-src-fontify-natively t)
-
-
-;; email
 
 
 ;; auto-generated stuff

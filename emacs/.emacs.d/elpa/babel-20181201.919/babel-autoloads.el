@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "babel" "babel.el" (0 0 0 0))
-;;; Generated autoloads from babel.el
+;;;### (autoloads nil "babel" "../../../../../.emacs.d/elpa/babel-20181201.919/babel.el"
+;;;;;;  "6997662ee297b535b0934ab9de8ab320")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/babel-20181201.919/babel.el
 
 (autoload 'babel "babel" "\
 Use a web translation service to translate the message MSG.
@@ -37,17 +38,27 @@ Use a web translation service to translate MSG, returning a string.
 Use a web translation service to translate the current buffer.
 Default is to present the translated text in a *babel* buffer.
 With a prefix argument, replace the current buffer contents by the
-translated text.
-
-\(fn)" t nil)
+translated text." t nil)
 
 (autoload 'babel-version "babel" "\
 Show the version number of babel in the minibuffer.
 If optional argument HERE is non-nil, insert version number at point.
 
 \(fn &optional HERE)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "babel" "../../../../../.emacs.d/elpa/babel-20181201.919/babel.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/babel-20181201.919/babel.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "babel" '("mm-encode-coding-string" "babel-" "json-get")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "babel" '("babel-" "json-get" "mm-encode-coding-string")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/babel-20181201.919/babel-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/babel-20181201.919/babel.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

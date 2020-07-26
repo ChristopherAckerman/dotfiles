@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "origami" "origami.el" (0 0 0 0))
-;;; Generated autoloads from origami.el
+;;;### (autoloads nil "origami" "../../../../../.emacs.d/elpa/origami-20200331.1019/origami.el"
+;;;;;;  "999c0803480bdfb06bb61b4499e8f3ce")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/origami-20200331.1019/origami.el
 
 (autoload 'origami-mode "origami" "\
 Minor mode to selectively hide/show text in the current buffer.
@@ -22,6 +23,8 @@ Key bindings:
 \\{origami-mode-map}
 
 \(fn &optional ARG)" t nil)
+
+(put 'global-origami-mode 'globalized-minor-mode t)
 
 (defvar global-origami-mode nil "\
 Non-nil if Global Origami mode is enabled.
@@ -44,20 +47,31 @@ Origami mode is enabled in all buffers where
 See `origami-mode' for more information on Origami mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "origami" "../../../../../.emacs.d/elpa/origami-20200331.1019/origami.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/origami-20200331.1019/origami.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "origami" '("origami-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "origami-parsers" "origami-parsers.el" (0 0
-;;;;;;  0 0))
-;;; Generated autoloads from origami-parsers.el
+;;;### (autoloads "actual autoloads are elsewhere" "origami-parsers"
+;;;;;;  "../../../../../.emacs.d/elpa/origami-20200331.1019/origami-parsers.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/origami-20200331.1019/origami-parsers.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "origami-parsers" '("origami-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("origami-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/origami-20200331.1019/origami-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/origami-20200331.1019/origami-parsers.el"
+;;;;;;  "../../../../../.emacs.d/elpa/origami-20200331.1019/origami-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/origami-20200331.1019/origami.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
