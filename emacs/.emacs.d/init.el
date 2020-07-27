@@ -1,6 +1,3 @@
-(setq inhibit-startup-message t)
-(setq inhibit-scratch-message nil)
-
 ;;PacMan stuff
 (require 'package)
 (add-to-list 'package-archives
@@ -23,14 +20,13 @@
   (add-hook 'after-init-hook 'global-company-mode))
 
 ;; vim keybindings
-;; download evil 
 (unless (package-installed-p 'evil)
   (package-install 'evil))
-;; enable evil
 (require 'evil)
 (evil-mode 1)
 (setq mac-option-modifier 'meta)
 (setq sentence-end-double-space nil)
+
 
 ;; which key
 (use-package which-key
@@ -46,11 +42,22 @@
 (require 'origami)
 
 ;; appearance
-(load-theme 'zenburn t)
-(setq scroll-conservatively 100)
-(global-linum-mode t)
+(set-face-attribute 'default nil :height 140)
 (menu-bar-mode -1)
-(setq linum-format "%4d \u2502 ")
+(scroll-bar-mode -1)
+(tool-bar-mode -1) 
+(load-theme 'zenburn t)
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
+(setq inhibit-startup-message t)
+(setq inhibit-scratch-message nil)
+(setq scroll-conservatively 100)
+(require 'hlinum)
+(hlinum-activate)
+(setq display-line-numbers-type 'relative) 
+(visual-line-mode)
+(use-package transpose-frame
+  :ensure t)
 
 ;;org-mode
 (require 'org)
@@ -88,13 +95,11 @@
 (setq org-agenda-span 14)
 (setq org-agenda-start-on-weekday nil)
 
-
 ;; latex editing
 (require 'pdf-tools)
 (setq Tex-auto-save t)
 (setq Tex-parse-self t)
 (setq-default Tex-master nil)
-(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -102,6 +107,14 @@
 (setq TeX-PDF-mode t)
 (pdf-tools-install)
 (setq org-src-fontify-natively t)
+(setq TeX-command-force "LaTex")
+(defun latex-export-pdf-then-refresh()
+  (TeX-command-master))
+(defun latex-auto-export-on()
+  (interactive)
+    (add-hook 'after-save-hook 'latex-export-pdf-then-refresh t t)
+    (TeX-command-run-all TeX-command-buffer)
+    (windmove-left))
 
 ;; git/magit
 (use-package magit
@@ -112,14 +125,17 @@
     ))
 
 ;; stats stuff
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/ess/")
 (require 'ess)
 (require 'ess-site)
+(require 'ess-julia)
 
 ;; personal elisp (and ob-stata.el/ess-stata-mode.el)
 (add-to-list 'load-path "~/dotfiles/emacs/.emacs.d/lisp")
 (require 'ess-stata-mode)
-;; (setq-default inferior-STA-program-name "stata-se")
-(setq-default inferior-STA-program "stata-se")
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/stata15/"))
+(setq-default inferior-STA-program-name "stata")
+(setq-default inferior-STA-program "stata")
 (setq-default inferior-STA-start-args "")
 
 ;; python
@@ -152,7 +168,10 @@
 (require 'ob-stata)
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((stata . t)))
+ '((stata . t)
+   (latex . t)
+   (julia . t)))
+
 ;; Include the latex-exporter
 (require 'ox-latex)
 (add-to-list 'org-latex-packages-alist '("" "minted"))
@@ -170,7 +189,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(solarized-theme git-timemachine elpy ess ess-R-data-view pdf-tools use-package afternoon-theme alect-themes almost-mono-themes atom-dark-theme auctex auctex-latexmk auctex-lua 0x0 julia-mode julia-repl julia-shell which-key spotify slime rand-theme pylint matlab-mode latexdiff latex-preview-pane latex-pretty-symbols latex-math-preview jupyter jedi gscholar-bibtex flycheck-julia evil dropbox csv conda biblio)))
+   '(transpose-frame hlinum solarized-theme git-timemachine elpy ess ess-R-data-view pdf-tools use-package afternoon-theme alect-themes almost-mono-themes atom-dark-theme auctex auctex-latexmk auctex-lua 0x0 julia-repl julia-shell which-key spotify slime rand-theme pylint matlab-mode latexdiff latex-preview-pane latex-pretty-symbols latex-math-preview jupyter jedi gscholar-bibtex flycheck-julia evil dropbox csv conda biblio)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

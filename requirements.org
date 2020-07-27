@@ -1,0 +1,61 @@
+* Document Prep
+** TODO Latex
+*** DONE Install
+    CLOSED: [2020-07-27 Mon 09:32]
+*** DONE Configure in neovim
+    CLOSED: [2020-07-27 Mon 09:32]
+*** TODO Configure in emacs
+** Org
+*** DONE Install
+    CLOSED: [2020-07-27 Mon 09:32]
+*** TODO Configure
+** TODO LibreOffice
+*** TODO Install
+** TODO PDFs
+*** DONE Install Zathura
+    CLOSED: [2020-07-27 Mon 09:42]
+*** TODO Configure Zathura
+*** TODO PDF commenting workflow with emacs pdf-tools
+* Email
+** TODO Emacs mu4e/notmuch
+* Stats
+Tmux/Vim slime should work as a fallback for all of these.
+** TODO Julia
+*** Install Julia
+*** Configure Emacs/Ess
+*** Configure Atom/Juno
+** TODO Matlab
+*** Install Matlab
+*** Configure Emacs/Ess
+** TODO Python
+*** Install Python
+*** Install libraries I plan on using
+*** Configure ESS
+** TODO Stata
+*** Install Stata
+*** Configure Emacs/Ess
+** TODO R
+*** Install R
+*** Configure Emacs/ESS
+* Terminal
+** Alacritty
+* Website
+** DONE Domain
+   CLOSED: [2020-07-27 Mon 09:30]
+** DONE VPS
+   CLOSED: [2020-07-27 Mon 09:30]
+** CSS
+** Blog
+** Notes
+** CV/About
+* Usable window manager
+** TODO Xmonad 
+*** DONE Install
+    CLOSED: [2020-07-27 Mon 09:31]
+*** TODO Rice
+** TODO Xmobar
+*** DONE Install
+    CLOSED: [2020-07-27 Mon 09:31]
+*** TODO Rice
+* Other fun ideas
+** RCM

@@ -4,6 +4,7 @@ import Data.Monoid
 import System.Exit
 import System.IO
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
@@ -255,8 +256,10 @@ myStartupHook = return ()
 --
 main = do 
   h <- spawnPipe "xmobar"
-  xmonad $ docks defaults {
-	logHook = dynamicLog
+  xmonad $ docks
+         $ ewmh
+         $ defaults {
+    logHook = dynamicLog
   }
 
 -- A structure containing your configuration settings, overriding
