@@ -95,8 +95,19 @@
 (setq org-agenda-span 14)
 (setq org-agenda-start-on-weekday nil)
 
+;; PDF reading/editing
+(use-package pdf-tools
+ :pin manual ;; manually update
+ :config
+ ;; initialise
+ (pdf-tools-install)
+ ;; open pdfs scaled to fit page
+ (setq-default pdf-view-display-size 'fit-page)
+ ;; automatically annotate highlights
+ (setq pdf-annot-activate-created-annotations t))
+
 ;; latex editing
-(require 'pdf-tools)
+;; (require 'pdf-tools)
 (setq Tex-auto-save t)
 (setq Tex-parse-self t)
 (setq-default Tex-master nil)
@@ -189,7 +200,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(transpose-frame hlinum solarized-theme git-timemachine elpy ess ess-R-data-view pdf-tools use-package afternoon-theme alect-themes almost-mono-themes atom-dark-theme auctex auctex-latexmk auctex-lua 0x0 julia-repl julia-shell which-key spotify slime rand-theme pylint matlab-mode latexdiff latex-preview-pane latex-pretty-symbols latex-math-preview jupyter jedi gscholar-bibtex flycheck-julia evil dropbox csv conda biblio)))
+   '(one-themes transpose-frame hlinum solarized-theme git-timemachine elpy ess ess-R-data-view pdf-tools use-package afternoon-theme alect-themes almost-mono-themes atom-dark-theme auctex auctex-latexmk auctex-lua 0x0 julia-repl julia-shell which-key spotify slime rand-theme pylint matlab-mode latexdiff latex-preview-pane latex-pretty-symbols latex-math-preview jupyter jedi gscholar-bibtex flycheck-julia evil dropbox csv conda biblio)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
