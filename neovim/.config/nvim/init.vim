@@ -45,6 +45,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1

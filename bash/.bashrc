@@ -12,4 +12,5 @@ source /usr/share/fzf/completion.bash
 source /usr/share/fzf/key-bindings.bash
 
 PATH="$PATH:/usr/local/stata15/"
+PATH="$PATH:/home/chris/.local/bin/"
 export PATH

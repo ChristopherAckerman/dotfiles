@@ -1,0 +1,4 @@
+(setq erc-nick "chrisAckerman")
+(setq erc-password "")
+(setq erc-server "irc.freenode.net")
+(setq erc-port 6667)

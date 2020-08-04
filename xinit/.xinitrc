@@ -66,6 +66,7 @@ nitrogen --restore &
 #done
 
 # Execute xmonad
-exec xmonad
-exec xmobar &
+exec qtile
+#exec xmonad
+#exec xmobar &
 
